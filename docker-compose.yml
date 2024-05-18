@@ -1,9 +1,9 @@
-version: "4.1"
+version: "3.8"
 
 services:
-    php:
+    vuexy:
         image: kooldev/php:8.1
-        container_name: php
+        container_name: vuexy
         working_dir: /vuexy
         restart: always
         networks:
@@ -18,9 +18,9 @@ services:
             - vuexy-database
         environment:
             - PHP_EXECUTABLE_PATH=/usr/local/bin/php
-    nginx:
+    vuexy-nginx:
         image: nginx:alpine
-        container_name: nginx
+        container_name: vuexy-nginx
         restart: always
         working_dir: /vuexy
         networks:
@@ -33,9 +33,9 @@ services:
             - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - vuexy
-    composer:
+    vuexy-composer:
         image: composer:latest
-        container_name: composer
+        container_name: vuexy-composer
         working_dir: /vuexy
         command: update --ignore-platform-reqs
         volumes:
@@ -43,10 +43,10 @@ services:
         restart: on-failure
         depends_on:
             - vuexy
-    database:
+    vuexy-database:
         image: mariadb:latest
         restart: always
-        container_name: database
+        container_name: vuexy-database
         working_dir: /vuexy
         networks:
             - internal
@@ -62,20 +62,20 @@ services:
             - ./vuexy-database:/var/lib/mysql
         ports:
             - "8003:3306"
-    redis:
+    vuexy-redis:
         image: "redis:alpine"
         ports:
             - "${FORWARD_REDIS_PORT:-6381}:6381"
         volumes:
-            - redis:/data
+            - vuexy-redis:/data
         networks:
             - internal
             - nginx_network
         command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
 
-    npm:
+    vuexy-npm:
         image: node:20-alpine
-        container_name: npm
+        container_name: vuexy-npm
         working_dir: /vuexy
         volumes:
             - ".:/vuexy"
