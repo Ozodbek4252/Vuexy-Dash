@@ -1,0 +1,103 @@
+version: "4.1"
+
+services:
+    php:
+        image: kooldev/php:8.1
+        container_name: php
+        working_dir: /vuexy
+        restart: always
+        networks:
+            - internal
+            - nginx_network
+        volumes:
+            - ".:/vuexy"
+            - "./docker/php/php-ini-overrides.ini:/etc/php/8.1/fpm/conf.d/99-overrides.ini"
+        links:
+            - vuexy-database
+        depends_on:
+            - vuexy-database
+        environment:
+            - PHP_EXECUTABLE_PATH=/usr/local/bin/php
+    nginx:
+        image: nginx:alpine
+        container_name: nginx
+        restart: always
+        working_dir: /vuexy
+        networks:
+            - internal
+            - nginx_network
+        ports:
+            - "9005:80"
+        volumes:
+            - .:/vuexy
+            - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - vuexy
+    composer:
+        image: composer:latest
+        container_name: composer
+        working_dir: /vuexy
+        command: update --ignore-platform-reqs
+        volumes:
+            - .:/vuexy
+        restart: on-failure
+        depends_on:
+            - vuexy
+    database:
+        image: mariadb:latest
+        restart: always
+        container_name: database
+        working_dir: /vuexy
+        networks:
+            - internal
+            - nginx_network
+        command: mysqld --skip-grant-tables
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=vuexy
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=password
+        volumes:
+            - .:/vuexy
+            - ./vuexy-database:/var/lib/mysql
+        ports:
+            - "8003:3306"
+    redis:
+        image: "redis:alpine"
+        ports:
+            - "${FORWARD_REDIS_PORT:-6381}:6381"
+        volumes:
+            - redis:/data
+        networks:
+            - internal
+            - nginx_network
+        command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+
+    npm:
+        image: node:20-alpine
+        container_name: npm
+        working_dir: /vuexy
+        volumes:
+            - ".:/vuexy"
+        depends_on:
+            - vuexy
+    adminer:
+        image: adminer
+        restart: always
+        networks:
+            - nginx_network
+        ports:
+            - "8080:8080"
+networks:
+    nginx_network:
+        external: true
+    internal:
+        driver: overlay
+        name: "global"
+        attachable: true
+        external: true
+volumes:
+    vuexy-database:
+        driver: local
+    vuexy-redis:
+        driver: local
