@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -16,10 +17,14 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $email
  * @property string|null $email_verified_at
  * @property string $password
+ * @property int $role_id
  * @property string|null $image
  * @property string|null $remember_token
  * @property string $created_at
  * @property string $updated_at
+ *
+ * @property Role $role
+ * @property string $image
  */
 class User extends Authenticatable
 {
@@ -34,7 +39,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'image'
+        'image',
+        'role_id',
     ];
 
     /**
@@ -57,8 +63,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function getImage()
+    public function getImage(): string
     {
         return $this->image ? asset('storage/' . $this->image) : asset('images/user-regular-204.png');
+    }
+
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
     }
 }
