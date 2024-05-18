@@ -36,3 +36,6 @@
 
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+
+@livewireStyles
+{{--  @vite(['resources/js/app.js'])  --}}
