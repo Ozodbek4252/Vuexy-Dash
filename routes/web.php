@@ -27,7 +27,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::group([
-    'middleware' => ['auth:sanctum', 'revalidate', /* 'isAdmin', 'language' */],
+    'middleware' => [
+        'auth:sanctum', 'revalidate', 'localize',
+        /* 'isAdmin', 'language' */
+    ],
     'as' => 'dash.'
 ], function () {
     // Change language
