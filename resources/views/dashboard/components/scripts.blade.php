@@ -25,4 +25,22 @@
             });
         }
     })
+
+    $('#logoutId').on('click', function() {
+        console.log('logout clicked');
+        $.ajax({
+            url: '/logout',
+            type: 'POST',
+            data: {
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(data) {
+                console.log('logout success');
+                window.location.href = '/login';
+            },
+            error: function(err) {
+                console.log('logout error');
+            }
+        })
+    })
 </script>

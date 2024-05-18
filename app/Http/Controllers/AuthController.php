@@ -26,7 +26,7 @@ class AuthController extends Controller
             $user = Auth::user();
             $token = $user->createToken('auth-token')->plainTextToken;
 
-            return redirect()->route('dashboard')->with('token', $token);
+            return redirect()->route('dash.dashboard')->with('token', $token);
         }
 
         return back()->withErrors([

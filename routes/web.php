@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\LangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,22 @@ Route::get('/', function () {
     return view('index');
 });
 
-// For now
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::group([
+    'middleware' => ['auth:sanctum', 'revalidate', /* 'isAdmin', 'language' */],
+    'as' => 'dash.'
+], function () {
+    // Change language
+    Route::get('change-lang/{lang}', [LangController::class, 'changeLang'])->name('lang.change');
+
+    // Logout
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+    // For now
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
