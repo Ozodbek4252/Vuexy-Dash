@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\LangController;
+use App\Http\Controllers\Dashboard\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::group([
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 
     // For now
