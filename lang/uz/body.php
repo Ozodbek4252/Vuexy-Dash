@@ -15,4 +15,7 @@ return [
     'Stored successfully' => 'Muvaffaqiyatli saqlandi',
     'Deleted successfully' => 'Muvaffaqiyatli o\'chirildi',
     'Save' => 'Saqlash',
+    'The provided credentials do not match our records' => 'Kiritilgan ma\'lumotlar bizning yozuvlarimiz bilan mos kelmadi',
+    'Email' => 'Elektron pochta',
+    'Password' => 'Parol',
 ];

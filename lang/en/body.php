@@ -15,4 +15,7 @@ return [
     'Stored successfully' => 'Stored successfully',
     'Deleted successfully' => 'Deleted successfully',
     'Save' => 'Save',
+    'The provided credentials do not match our records' => 'The provided credentials do not match our records',
+    'Email' => 'Email',
+    'Password' => 'Password',
 ];

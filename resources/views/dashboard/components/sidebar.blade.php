@@ -40,7 +40,7 @@
                             </g>
                         </svg>
                     </span>
-                    <h2 class="brand-text">Vuexy</h2>
+                    <h2 class="brand-text">{{ truncate($company->name, 8) }}</h2>
                 </a>
             </li>
             <li class="nav-item nav-toggle">

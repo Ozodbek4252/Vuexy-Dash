@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Flasher\Laravel\Facade\Flasher;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -19,8 +20,9 @@ class AuthController extends Controller
     public function doLogin(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
+        $remember = $request->remember == 'on' ? true : false;
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $remember)) {
             /**
              * @var User
              */
@@ -34,6 +36,8 @@ class AuthController extends Controller
                 return redirect()->route('home')->with('token', $token);
             }
         }
+
+        Flasher::addError(trans('body.The provided credentials do not match our records'));
 
         return back()->withErrors([
             'error' => 'The provided credentials do not match our records.',
