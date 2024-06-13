@@ -90,13 +90,16 @@
                                     </div>
                                     <div class="mb-1">
                                         <div class="form-check">
-                                            <input name="remember" value="{{ old('remember') }}" class="form-check-input" type="checkbox"
+                                            <input name="remember" class="form-check-input" type="checkbox"
                                                 id="remember-me" tabindex="3" />
-                                            <label class="form-check-label" for="remember-me"> Remember Me </label>
+                                            <label class="form-check-label" for="remember-me">
+                                                {{ __('body.Remember Me') }}
+                                            </label>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary w-100" tabindex="4">Sign
-                                        in</button>
+                                    <button type="submit" class="btn btn-primary w-100" tabindex="4">
+                                        Sign in
+                                    </button>
                                 </form>
 
                                 <p class="text-center mt-2">

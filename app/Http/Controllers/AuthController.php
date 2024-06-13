@@ -29,6 +29,8 @@ class AuthController extends Controller
             $user = Auth::user();
             $token = $user->createToken('auth-token')->plainTextToken;
 
+            Flasher::addSuccess(trans('body.Successfully logged in'));
+
             // Check the user's role and redirect accordingly
             if (in_array($user->role->slug, ['owner', 'admin'])) {
                 return redirect()->route('dash.dashboard')->with('token', $token);

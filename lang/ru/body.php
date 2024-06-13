@@ -18,4 +18,6 @@ return [
     'The provided credentials do not match our records' => 'Предоставленные учетные данные не соответствуют нашим записям',
     'Email' => 'Электронная почта',
     'Password' => 'Пароль',
+    'Successfully logged in' => 'Успешно вошли',
+    'Remember Me' => 'Запомнить меня',
 ];

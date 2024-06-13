@@ -18,4 +18,6 @@ return [
     'The provided credentials do not match our records' => 'Kiritilgan ma\'lumotlar bizning yozuvlarimiz bilan mos kelmadi',
     'Email' => 'Elektron pochta',
     'Password' => 'Parol',
+    'Successfully logged in' => 'Muvaffaqiyatli kirdingiz',
+    'Remember Me' => 'Meni eslab qolish',
 ];

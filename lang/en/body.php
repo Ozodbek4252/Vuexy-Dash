@@ -18,4 +18,6 @@ return [
     'The provided credentials do not match our records' => 'The provided credentials do not match our records',
     'Email' => 'Email',
     'Password' => 'Password',
+    'Successfully logged in' => 'Successfully logged in',
+    'Remember Me' => 'Remember Me',
 ];
