@@ -1,4 +1,4 @@
-version: "3.8"
+version: "4.0"
 
 services:
     vuexy:
@@ -51,7 +51,7 @@ services:
         networks:
             - internal
             - nginx_network
-        command: mysqld --skip-grant-tables
+        # command: mysqld --skip-grant-tables
         environment:
             - MYSQL_ROOT_PASSWORD=password
             - MYSQL_DATABASE=vuexy

@@ -42,7 +42,7 @@ class IndexUserViewModel extends BaseViewModel
     private function getTranslations(Collection $collection): array
     {
         $collection = $collection->filter(function ($item) {
-            return $item->lang->code == env('LOCALE', 'uz');
+            return $item->lang->code == env('LOCALE', app()->getLocale());
         });
 
         $collection = $collection->groupBy('column_name');
