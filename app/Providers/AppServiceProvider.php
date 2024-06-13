@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Lang;
+use App\ViewModels\User\IndexUserViewModel;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,13 +23,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
-            $user = auth()->user();
+            $usera = auth()->user();
+            $user_auth = new IndexUserViewModel($usera);
             $langsForHeader = Lang::where('is_published', true)->get();
             $currenctLang = Lang::where('code', session('locale'))->first();
             // $logo = Logo::first();
 
             $view->with([
-                'user' => $user,
+                'user_auth' => $user_auth,
                 'langsForHeader' => $langsForHeader,
                 'currenctLang' => $currenctLang,
                 // 'logo' => $logo,

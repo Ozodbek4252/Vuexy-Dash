@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
         // Get all files from the folder
         $files = File::files($folderPath);
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 15; $i++) {
             $name = fake()->name();
             $email = Str::slug($name) . '@gmail.com';
 

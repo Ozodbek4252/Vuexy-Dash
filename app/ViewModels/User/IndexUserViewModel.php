@@ -36,7 +36,7 @@ class IndexUserViewModel extends BaseViewModel
         $this->updated_at = $this->_data->updated_at;
         $this->role = $this->_data->role;
 
-        $this->role->translations = $this->getTranslations($this->_data->role->translations);
+        $this->role->translations = isset($this->_data->role->translations) && gettype($this->_data->role->translations) != 'array' ? $this->getTranslations($this->_data->role->translations) : $this->_data->role->translations;
     }
 
     private function getTranslations(Collection $collection): array
