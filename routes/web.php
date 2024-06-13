@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\LangController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,10 @@ Route::group([
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    // Settings
+    Route::get('/company-settings', [SettingController::class, 'companySetting'])->name('company-setting');
+    Route::put('/company-settings', [SettingController::class, 'updateCompanySetting'])->name('company-setting.update');
 
 
     // For now

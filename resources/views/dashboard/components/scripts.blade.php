@@ -12,6 +12,8 @@
 <script src="{{ asset('app-assets/js/core/app.js') }}"></script>
 <!-- END: Theme JS-->
 
+{{--  <script src="{{ asset('app-assets/js/scripts/components/components-bs-toast.js') }}"></script>  --}}
+
 <!-- BEGIN: Page JS-->
 <script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
 <!-- END: Page JS-->

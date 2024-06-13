@@ -66,12 +66,39 @@
                 <span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span>
                 <i data-feather="more-horizontal"></i>
             </li>
+
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#">
                     <i data-feather='settings'></i>
                     <span class="menu-title text-truncate" data-i18n="eCommerce">{{ __('body.Settings') }}</span>
                 </a>
                 <ul class="menu-content">
+                    {{--  <li>
+                        <a class="d-flex align-items-center" href="#">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Second Level">{{ __('body.Company Settings') }}</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li>
+                                <a class="d-flex align-items-center" href="#">
+                                    <span class="menu-item text-truncate" data-i18n="Third Level">Third Level
+                                        3.1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><span
+                                        class="menu-item text-truncate" data-i18n="Third Level">Third Level
+                                        3.2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>  --}}
+                    <li>
+                        <a class="d-flex align-items-center" href="{{ Route('dash.company-setting') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Roles">{{ __('body.Company Settings') }}</span>
+                        </a>
+                    </li>
                     <li>
                         <a class="d-flex align-items-center" href="app-access-roles.html">
                             <i data-feather="circle"></i>

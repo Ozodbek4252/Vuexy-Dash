@@ -33,10 +33,10 @@
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-
     @include('dashboard.components.footer')
 
     @include('dashboard.components.scripts')
+    @flasher_render
 </body>
 <!-- END: Body-->
 
