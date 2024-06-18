@@ -37,6 +37,7 @@ Route::group([
 ], function () {
     // Change language
     Route::get('change-lang/{lang}', [LangController::class, 'changeLang'])->name('lang.change');
+    Route::resource('langs', LangController::class)->only(['index', 'store', 'update', 'destroy']);
 
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

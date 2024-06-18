@@ -100,6 +100,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="d-flex align-items-center" href="{{ route('dash.langs.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Roles">{{ __('body.Langs') }}</span>
+                        </a>
+                    </li>
+                    <li>
                         <a class="d-flex align-items-center" href="app-access-roles.html">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Roles">Roles</span>

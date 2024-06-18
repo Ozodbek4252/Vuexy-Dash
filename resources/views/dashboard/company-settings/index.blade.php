@@ -17,7 +17,7 @@
                                     <div class="mb-1">
                                         <label class="form-label" for="name-column">{{ __('body.Name_n') }}</label>
                                         <input name="name" value="{{ $company->name }}" type="text" id="name-column"
-                                            class="form-control" placeholder="{{ __('body.Enter Name_n') }}..." />
+                                            class="form-control" placeholder="{{ __('body.Enter name_n') }}..." />
                                     </div>
                                 </div>
                             </div>
