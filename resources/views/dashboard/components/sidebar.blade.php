@@ -111,6 +111,12 @@
                             <span class="menu-item text-truncate" data-i18n="Roles">Roles</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="d-flex align-items-center" href="{{ route('dash.icons.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Icons">{{ __('body.Icons') }}</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 

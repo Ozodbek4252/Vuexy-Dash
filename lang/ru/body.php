@@ -40,4 +40,8 @@ return [
     'Close' => 'Закрыть',
     'Update' => 'Обновить',
     'Do you really want to delete this?' => 'Вы действительно хотите удалить это?',
+    'Icons' => 'Иконки',
+    'Create Icon' => 'Создать иконку',
+    'Update Icon' => 'Обновить иконку',
+    'Delete Icon' => 'Удалить иконку',
 ];

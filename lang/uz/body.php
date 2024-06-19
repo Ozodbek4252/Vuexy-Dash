@@ -40,4 +40,8 @@ return [
     'Close' => 'Yopish',
     'Update' => 'Yangilash',
     'Do you really want to delete this?' => 'Siz rostdan ham uni o\'chirmoqchimisiz?',
+    'Icons' => 'Belgilar',
+    'Create Icon' => 'Belgi yaratish',
+    'Update Icon' => 'Belgi yangilash',
+    'Delete Icon' => 'Belgi o\'chirish',
 ];

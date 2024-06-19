@@ -40,4 +40,8 @@ return [
     'Close' => 'Close',
     'Update' => 'Update',
     'Do you really want to delete this?' => 'Do you really want to delete this?',
+    'Icons' => 'Icons',
+    'Create Icon' => 'Create Icon',
+    'Update Icon' => 'Update Icon',
+    'Delete Icon' => 'Delete Icon',
 ];

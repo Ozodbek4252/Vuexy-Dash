@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\IconController;
 use App\Http\Controllers\Dashboard\LangController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SettingController;
@@ -47,6 +48,9 @@ Route::group([
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    // resources
+    Route::resource('icons', IconController::class)->only(['index', 'store', 'update', 'destroy']);
 
     // Settings
     Route::get('/company-settings', [SettingController::class, 'companySetting'])->name('company-setting');
