@@ -67,7 +67,10 @@
                 <i data-feather="more-horizontal"></i>
             </li>
 
-            <li class=" nav-item">
+            <li
+                class="nav-item
+            {{ Str::startsWith(Route::currentRouteName(), ['dash.company-setting', 'dash.langs', 'dash.icons', 'dash.seos']) ? 'open' : '' }}
+            ">
                 <a class="d-flex align-items-center" href="#">
                     <i data-feather='settings'></i>
                     <span class="menu-title text-truncate" data-i18n="eCommerce">{{ __('body.Settings') }}</span>
@@ -93,13 +96,20 @@
                             </li>
                         </ul>
                     </li>  --}}
-                    <li>
+                    <li
+                        class="
+                            {{ Str::startsWith(Route::currentRouteName(), ['dash.company-setting']) ? 'active' : '' }}
+                            ">
                         <a class="d-flex align-items-center" href="{{ Route('dash.company-setting') }}">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Roles">{{ __('body.Company Settings') }}</span>
+                            <span class="menu-item text-truncate"
+                                data-i18n="Roles">{{ __('body.Company Settings') }}</span>
                         </a>
                     </li>
-                    <li>
+                    <li
+                        class="
+                            {{ Str::startsWith(Route::currentRouteName(), ['dash.langs']) ? 'active' : '' }}
+                            ">
                         <a class="d-flex align-items-center" href="{{ route('dash.langs.index') }}">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Roles">{{ __('body.Langs') }}</span>
@@ -111,13 +121,19 @@
                             <span class="menu-item text-truncate" data-i18n="Roles">Roles</span>
                         </a>
                     </li>
-                    <li>
+                    <li
+                        class="
+                            {{ Str::startsWith(Route::currentRouteName(), ['dash.seos']) ? 'active' : '' }}
+                            ">
                         <a class="d-flex align-items-center" href="{{ route('dash.seos.index') }}">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="SEO">SEO</span>
                         </a>
                     </li>
-                    <li>
+                    <li
+                        class="
+                            {{ Str::startsWith(Route::currentRouteName(), ['dash.icons']) ? 'active' : '' }}
+                            ">
                         <a class="d-flex align-items-center" href="{{ route('dash.icons.index') }}">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Icons">{{ __('body.Icons') }}</span>
