@@ -112,6 +112,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="d-flex align-items-center" href="{{ route('dash.seos.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="SEO">SEO</span>
+                        </a>
+                    </li>
+                    <li>
                         <a class="d-flex align-items-center" href="{{ route('dash.icons.index') }}">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Icons">{{ __('body.Icons') }}</span>

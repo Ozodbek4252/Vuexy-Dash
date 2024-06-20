@@ -1,3 +1,5 @@
+<script src="{{ asset('app-assets/js/scripts/jquery/jquery.min.js') }}"></script>
+
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset('app-assets/vendors/js/vendors.min.js') }}"></script>
 <!-- BEGIN Vendor JS-->
@@ -11,6 +13,7 @@
 <script src="{{ asset('app-assets/js/core/app-menu.js') }}"></script>
 <script src="{{ asset('app-assets/js/core/app.js') }}"></script>
 <!-- END: Theme JS-->
+
 
 {{--  <script src="{{ asset('app-assets/js/scripts/components/components-bs-toast.js') }}"></script>  --}}
 
@@ -46,5 +49,5 @@
         })
     })
 </script>
-
+@yield('js')
 @livewireScripts

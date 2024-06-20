@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\IconController;
 use App\Http\Controllers\Dashboard\LangController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\SeoController;
 use App\Http\Controllers\Dashboard\SettingController;
 
 /*
@@ -51,6 +52,7 @@ Route::group([
 
     // resources
     Route::resource('icons', IconController::class)->only(['index', 'store', 'update', 'destroy']);
+    Route::resource('seos', SeoController::class)->only(['index', 'update']);
 
     // Settings
     Route::get('/company-settings', [SettingController::class, 'companySetting'])->name('company-setting');

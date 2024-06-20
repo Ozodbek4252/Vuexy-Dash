@@ -44,4 +44,9 @@ return [
     'Create Icon' => 'Создать иконку',
     'Update Icon' => 'Обновить иконку',
     'Delete Icon' => 'Удалить иконку',
+    'Title' => 'Заголовок',
+    'Keywords' => 'Ключевые слова',
+    'Description' => 'Описание',
+    'Value' => 'Значение',
+    'Update SEO' => 'Обновить SEO',
 ];

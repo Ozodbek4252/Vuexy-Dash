@@ -44,4 +44,9 @@ return [
     'Create Icon' => 'Belgi yaratish',
     'Update Icon' => 'Belgi yangilash',
     'Delete Icon' => 'Belgi o\'chirish',
+    'Title' => 'Sarlavha',
+    'Keywords' => 'Kalit so\'zlar',
+    'Description' => 'Tavsif',
+    'Value' => 'Qiymat',
+    'Update SEO' => 'SEO-ni yangilash',
 ];

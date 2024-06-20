@@ -44,4 +44,9 @@ return [
     'Create Icon' => 'Create Icon',
     'Update Icon' => 'Update Icon',
     'Delete Icon' => 'Delete Icon',
+    'Title' => 'Title',
+    'Keywords' => 'Keywords',
+    'Description' => 'Description',
+    'Value' => 'Value',
+    'Update SEO' => 'Update SEO',
 ];
